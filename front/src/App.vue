@@ -5,16 +5,18 @@ import { useQuery } from '@tanstack/vue-query'
 const { isPending, isFetching, isError, data, error } = useQuery({
   queryKey: ['todos'],
   queryFn: async () => {
-    const response = await fetch('http://localhost:8000/todos')
+    const response = await fetch('http://localhost:8000/api/todos')
     return response.json()
   }
 })
+
+console.log(data);
+
 </script>
 
 <template>
 
   <div>
-    <HelloWorld />
     <div v-if="isPending">Loading...</div>
     <div v-if="isError">{{ error }}</div>
     <div v-if="isFetching">Refetching...</div>
