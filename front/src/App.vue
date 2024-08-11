@@ -10,8 +10,6 @@ const { isPending, isFetching, isError, data, error } = useQuery({
   }
 })
 
-console.log(data);
-
 </script>
 
 <template>
